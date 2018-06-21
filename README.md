@@ -1,0 +1,2 @@
+# FORLINX-Linux3.14-I.MX6UL
+适用飞凌I.MX6UL-C板子
