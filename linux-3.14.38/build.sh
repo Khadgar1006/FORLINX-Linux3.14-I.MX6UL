@@ -7,11 +7,14 @@ export PATH=/opt/freescale/usr/local/gcc-4.6.2-glibc-2.13-linaro-multilib-2011.1
 
 make distclean
 if [ "$1" == "emmc" ]; then
+	echo "build emmc"
     cp ./linux_imx6ul_emmc_config .config
 elif [ "$1" == "nand" ]; then
+	echo "build nand"
     cp ./linux_imx6ul_nand_config .config
 else
-    echo "not support now"
+	echo "build emmc"
+    cp ./linux_imx6ul_emmc_config .config
 fi
 
 make zImage -j${CPUS}
