@@ -22,6 +22,12 @@ elif [ "$1" == "all" ]; then
     make zImage -j${CPUS}
 	make dtbs
 	make modules
+elif [ "$1" == "" ]; then
+	echo "build emmc"
+    cp ./linux_imx6ul_emmc_config .config
+    make zImage -j${CPUS}
+	make dtbs
+	make modules
 else
 	echo "parameter error"
 fi

@@ -487,6 +487,13 @@ config LEDS_BLINKM
 	  This option enables support for the BlinkM RGB LED connected
 	  through I2C. Say Y to enable support for the BlinkM LED.
 
+config LED3_GPIO
+	tristate "LED3 Test Driver"
+	depends on LEDS_CLASS
+	depends on GPIOLIB
+	help
+	  This is led3 test driver.
+
 comment "LED Triggers"
 source "drivers/leds/trigger/Kconfig"
 

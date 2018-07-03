@@ -3159,6 +3159,7 @@ CONFIG_LEDS_GPIO=y
 # CONFIG_LEDS_LM355x is not set
 # CONFIG_LEDS_OT200 is not set
 # CONFIG_LEDS_BLINKM is not set
+CONFIG_LED3_GPIO=m
 
 #
 # LED Triggers
