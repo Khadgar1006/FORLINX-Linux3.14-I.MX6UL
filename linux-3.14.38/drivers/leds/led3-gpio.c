@@ -36,33 +36,33 @@ struct gpio_led_data {
 			unsigned long *delay_on, unsigned long *delay_off);
 };
 
-static int gpio_led_probe(struct platform_device *pdev)
+static int led3_gpio_probe(struct platform_device *pdev)
 {
-
+	return 0;
 }
 
-static int gpio_led_remove(struct platform_device *pdev)
+static int led3_gpio_remove(struct platform_device *pdev)
 {
-
+	return 0;
 }
 
 
 static const struct of_device_id of_gpio_leds_match[] = {
-	{ .compatible = "led3", },
+	{ .compatible = "led3_gpio", },
 	{},
 };
 
-static struct platform_driver gpio_led3_driver = {
-	.probe		= led3_probe,
-	.remove		= led3_remove,
+static struct platform_driver led3_gpio_driver = {
+	.probe		= led3_gpio_probe,
+	.remove		= led3_gpio_remove,
 	.driver		= {
-		.name	= "led3",
+		.name	= "led3-gpio",
 		.owner	= THIS_MODULE,
 		.of_match_table = of_match_ptr(of_gpio_leds_match),
 	},
 };
 
-module_platform_driver(gpio_led3_driver);
+module_platform_driver(led3_gpio_driver);
 
 MODULE_AUTHOR("Khadgar");
 MODULE_DESCRIPTION("GPIO LED Test driver");

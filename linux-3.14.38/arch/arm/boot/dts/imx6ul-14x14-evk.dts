@@ -30,26 +30,37 @@
 		reg = <0x80000000 0x20000000>;
 	};
 	leds {
-	compatible = "gpio-leds";
-	pinctrl-names = "default";
-	status = "okay";
-	led1{
-		label = "led1";
-		gpios = <&gpio5 9 GPIO_ACTIVE_LOW>;
-		default-state = "off";
-	};
-	led2{
-		label = "led2";
-		gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
-		default-state = "off";
+		compatible = "gpio-leds";
+		pinctrl-names = "default";
+		status = "okay";
+		led1{
+			label = "led1";
+			gpios = <&gpio5 9 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
+		led2{
+			label = "led2";
+			gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
+		/*
+		led3{
+			label = "led3";
+			gpios = <&gpio5 5 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		};
+		*/
 	};
 	led3{
-		label = "led3";
-		gpios = <&gpio5 5 GPIO_ACTIVE_LOW>;
-		default-state = "off";
-	};
-	
-	};
+		compatible = "led3_gpio";
+		pinctrl-names = "default";
+		status = "okay";
+		led3{
+			label = "led3";
+			gpios = <&gpio5 5 GPIO_ACTIVE_LOW>;
+			default-state = "off";
+		}
+	}
 
 	backlight {
 		compatible = "pwm-backlight";
