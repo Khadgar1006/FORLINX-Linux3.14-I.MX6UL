@@ -59,8 +59,8 @@
 			label = "led3";
 			gpios = <&gpio5 5 GPIO_ACTIVE_LOW>;
 			default-state = "off";
-		}
-	}
+		};
+	};
 
 	backlight {
 		compatible = "pwm-backlight";
